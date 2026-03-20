@@ -31,62 +31,103 @@ import { HeroHighlight, Highlight } from './components/HeroHighlight';
    DATA
    ────────────────────────────────────────────── */
 
-const categories = ['Todos', 'Pavers', 'Blocos', 'Meio-Fio', 'Especiais'];
+const categories = ['Todos', 'Blocos', 'Pisos Intertravados', 'Meio-Fio'];
 
 const products = [
+  /* ── BLOCOS ── */
   {
     id: 1,
-    name: 'Paver Retangular',
-    category: 'Pavers',
-    image: 'https://images.unsplash.com/photo-1584464436275-165d7b5b5a84?auto=format&fit=crop&q=80&w=800',
-    dimensions: '20 x 10 x 6 cm',
-    application: 'Tráfego Leve / Pedestres',
-    resistance: '35 MPa',
-  },
-  {
-    id: 2,
-    name: 'Paver 16 Faces',
-    category: 'Pavers',
-    image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=800',
-    dimensions: '22.5 x 11 x 8 cm',
-    application: 'Tráfego Pesado / Caminhões',
-    resistance: '50 MPa',
-  },
-  {
-    id: 3,
     name: 'Bloco Estrutural',
     category: 'Blocos',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800',
-    dimensions: '14 x 19 x 39 cm',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_160801_c4dd57b8-488d-4e34-8391-b129e4da81a9.jpeg&w=1920&q=85',
+    dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
     application: 'Alvenaria Estrutural',
     resistance: '6 MPa',
   },
   {
-    id: 4,
-    name: 'Bloco de Vedação',
+    id: 2,
+    name: 'Meio Bloco',
     category: 'Blocos',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800',
-    dimensions: '09 x 19 x 39 cm',
-    application: 'Fechamento de Vãos',
-    resistance: '3 MPa',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_172327_987696a5-e3de-438d-b35d-ede364b62172.jpeg&w=1920&q=85',
+    dimensions: '09x19x19 · 14x19x19 · 19x19x19 cm',
+    application: 'Ajuste e Acabamento',
+    resistance: '6 MPa',
+  },
+  {
+    id: 3,
+    name: 'Bloco Calha',
+    category: 'Blocos',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_180519_ea7e9653-fa50-4535-adfa-5dff2702f734.jpeg&w=1920&q=85',
+    dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
+    application: 'Cintas e Vergas',
+    resistance: '6 MPa',
+  },
+
+  /* ── PISOS INTERTRAVADOS ── */
+  {
+    id: 4,
+    name: '16 Faces',
+    category: 'Pisos Intertravados',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_181114_9ee3bc67-f5f8-4234-8937-5d3a48bf923a.jpeg&w=1920&q=85',
+    dimensions: '06x11,5x5 · 08x11,5x22 cm',
+    application: 'Calçadas e Estacionamentos',
+    resistance: '35 MPa',
   },
   {
     id: 5,
-    name: 'Meio-Fio Padrão',
-    category: 'Meio-Fio',
-    image: 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=800',
-    dimensions: '100 x 30 x 15 cm',
-    application: 'Vias Públicas / Loteamentos',
+    name: 'Bernine',
+    category: 'Pisos Intertravados',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_182009_26cb6c2c-ff56-4438-9eda-e81158ff5cee.jpeg&w=1920&q=85',
+    dimensions: '04x10x20 · 06x10x20 · 08x10x20 cm',
+    application: 'Áreas Residenciais e Comerciais',
     resistance: '35 MPa',
   },
   {
     id: 6,
-    name: 'Piso Drenante',
-    category: 'Especiais',
-    image: 'https://images.unsplash.com/photo-1585207865293-8b172a1f0542?auto=format&fit=crop&q=80&w=800',
-    dimensions: '40 x 40 x 6 cm',
-    application: 'Áreas Permeáveis / Jardins',
-    resistance: '25 MPa',
+    name: 'Sextavado',
+    category: 'Pisos Intertravados',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_183359_a9990c1f-4a5a-4c15-9186-63c6b98b52b2.jpeg&w=1920&q=85',
+    dimensions: '06x11,5x22 · 08x30x30 cm',
+    application: 'Praças e Áreas Públicas',
+    resistance: '35 MPa',
+  },
+  {
+    id: 7,
+    name: 'Pisograma',
+    category: 'Pisos Intertravados',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184006_6f3e2745-9d1c-4162-80ee-e22d17852232.jpeg&w=1920&q=85',
+    dimensions: '08x16x32 cm',
+    application: 'Estacionamentos Permeáveis',
+    resistance: '35 MPa',
+  },
+
+  /* ── MEIO-FIO ── */
+  {
+    id: 8,
+    name: 'Meio-Fio',
+    category: 'Meio-Fio',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg&w=1920&q=85',
+    dimensions: '21x12x80 cm',
+    application: 'Loteamentos e Vias Públicas',
+    resistance: '35 MPa',
+  },
+  {
+    id: 9,
+    name: 'Meio-Fio',
+    category: 'Meio-Fio',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184849_ae96fd5f-95e7-4bcd-b7e7-659f6d0869ec.jpeg&w=1920&q=85',
+    dimensions: '15x35x80 cm',
+    application: 'Loteamentos e Vias Públicas',
+    resistance: '35 MPa',
+  },
+  {
+    id: 10,
+    name: 'Meio-Fio',
+    category: 'Meio-Fio',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184913_675bb10a-9511-48bf-8e81-23eccb0be51a.jpeg&w=1920&q=85',
+    dimensions: '10x25x80 · 10x30x80 cm',
+    application: 'Loteamentos e Vias Públicas',
+    resistance: '35 MPa',
   },
 ];
 
@@ -162,22 +203,24 @@ const cities = {
   juazeiro: {
     name: 'Juazeiro do Norte',
     state: 'CE',
-    whatsapp: '5588999999999',
-    phone: '+5588999999999',
-    phoneDisplay: '(88) 99999-9999',
-    email: 'juazeiro@d2blocos.com.br',
-    address: 'Juazeiro do Norte, CE',
-    instagram: 'https://instagram.com/d2blocos.juazeiro',
+    contact: 'Pedro Henrique',
+    whatsapp: '5588981509660',
+    phone: '+5588981509660',
+    phoneDisplay: '(88) 9.8150-9660',
+    email: 'd2blocospremoldados@gmail.com',
+    address: 'Av. José Cardoso de Alcântara, 856, Cidade Kariris - Barbalha, CE',
+    instagram: 'https://instagram.com/d2blocosepisosjn',
   },
   petrolina: {
     name: 'Petrolina',
     state: 'PE',
-    whatsapp: '5587999999999',
-    phone: '+5587999999999',
-    phoneDisplay: '(87) 99999-9999',
-    email: 'petrolina@d2blocos.com.br',
+    contact: 'Rafael Pedrosa',
+    whatsapp: '5587999784235',
+    phone: '+5587999784235',
+    phoneDisplay: '(87) 9.9978-4235',
+    email: 'd2blocospremoldados@gmail.com',
     address: 'Petrolina, PE',
-    instagram: 'https://instagram.com/d2blocos.petrolina',
+    instagram: 'https://instagram.com/d2blocosepisosjn',
   },
 };
 
@@ -396,13 +439,23 @@ export default function App() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile video (vertical) */}
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover block md:hidden"
             src="https://d2ol7oe51mr4n9.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/606981e7-a7ae-4da7-8c05-98c17d69a53e.mp4"
+          />
+          {/* Desktop video (horizontal) */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover hidden md:block"
+            src="https://d2ol7oe51mr4n9.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/dd65ff75-978c-4a37-aa96-fbc7b8a700c1.mp4"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
           <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#F7F7F5] to-transparent" />
@@ -643,7 +696,7 @@ export default function App() {
                   className="group bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover:shadow-2xl hover:shadow-black/8 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 >
                   {/* Image */}
-                  <div className="relative h-56 md:h-64 overflow-hidden bg-zinc-100">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
                     <img
                       src={product.image}
                       alt={`${product.name} - ${product.application}`}
