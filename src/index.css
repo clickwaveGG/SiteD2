@@ -22,6 +22,13 @@ body {
   color: #1A1A1A;
 }
 
+/* GPU-accelerated animations — eliminates flicker */
+[style*="opacity"] {
+  will-change: opacity, transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

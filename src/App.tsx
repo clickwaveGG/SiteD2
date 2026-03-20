@@ -24,8 +24,25 @@ import {
   Instagram,
   Facebook,
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, type Variants } from 'motion/react';
 import { HeroHighlight, Highlight } from './components/HeroHighlight';
+
+/* ──────────────────────────────────────────────
+   SMOOTH ANIMATION VARIANTS (no flicker)
+   ────────────────────────────────────────────── */
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeScale: Variants = {
+  hidden: { opacity: 0, scale: 0.97 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const smoothViewport = { once: true, amount: 0.15 } as const;
+const smoothTransition = { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } as const;
 
 /* ──────────────────────────────────────────────
    DATA
@@ -407,7 +424,7 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
+              transition={smoothTransition}
               className="md:hidden bg-white/95 backdrop-blur-xl border-t border-zinc-200 overflow-hidden"
             >
               <div className="px-6 py-4 flex flex-col gap-1">
@@ -467,12 +484,12 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ ...smoothTransition, delay: 0.2 }}
             className="mb-8"
           >
             <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white/90 text-xs md:text-sm font-semibold tracking-wider uppercase px-5 py-2.5 rounded-full border border-white/20">
               <span className="w-2 h-2 bg-[#8CC63F] rounded-full animate-pulse" />
-              Desde 2015 construindo qualidade
+              Desde 2020 construindo qualidade
             </span>
           </motion.div>
 
@@ -480,7 +497,7 @@ export default function App() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ ...smoothTransition, delay: 0.4 }}
             className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] leading-[0.9] tracking-tight mb-8"
           >
             <span className="block text-white/90 font-serif italic font-light drop-shadow-2xl">
@@ -495,7 +512,7 @@ export default function App() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ ...smoothTransition, delay: 0.6 }}
             className="text-white/70 text-base md:text-xl max-w-2xl mb-10 leading-relaxed"
           >
             Pavers, blocos e pisos de concreto com a mais alta tecnologia.
@@ -506,7 +523,7 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ ...smoothTransition, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center gap-4"
           >
             <button
@@ -551,10 +568,11 @@ export default function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
             className="text-center mb-16 md:mb-24"
           >
             <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Nossos Números</span>
@@ -571,10 +589,11 @@ export default function App() {
             ].map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.1 }}
                 ref={stat.ref}
                 className="flex flex-col items-center text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/80 shadow-sm"
               >
@@ -597,10 +616,11 @@ export default function App() {
       <section id="vantagens" className="relative py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
             className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
           >
             <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Por que a D2?</span>
@@ -617,10 +637,11 @@ export default function App() {
             {advantages.map((adv, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.08 }}
                 className="group bg-[#F7F7F5] rounded-2xl p-7 md:p-8 hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-zinc-200 cursor-default"
               >
                 <div className="w-12 h-12 bg-[#8CC63F]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#8CC63F] transition-all duration-300">
@@ -642,10 +663,11 @@ export default function App() {
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 md:mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={smoothViewport}
+              transition={smoothTransition}
               className="max-w-2xl"
             >
               <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Catálogo</span>
@@ -660,10 +682,11 @@ export default function App() {
 
             {/* Filter Pills */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={smoothViewport}
+              transition={{ ...smoothTransition, delay: 0.2 }}
               className="flex flex-wrap gap-2"
             >
               {categories.map((category) => (
@@ -692,7 +715,7 @@ export default function App() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
+                  transition={smoothTransition}
                   className="group bg-white rounded-2xl overflow-hidden border border-zinc-200/80 hover:shadow-2xl hover:shadow-black/8 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 >
                   {/* Image */}
@@ -758,10 +781,11 @@ export default function App() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
             className="text-center mb-16 md:mb-20"
           >
             <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Diferenciais</span>
@@ -774,10 +798,11 @@ export default function App() {
             {differentials.map((diff, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.1 }}
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 text-center hover:bg-white/10 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-[#8CC63F]/15 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -797,10 +822,11 @@ export default function App() {
       <section id="depoimentos" className="relative py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
             className="text-center mb-16 md:mb-20"
           >
             <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Depoimentos</span>
@@ -813,10 +839,11 @@ export default function App() {
             {testimonials.map((test, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.1 }}
                 className="bg-[#F7F7F5] rounded-2xl p-7 md:p-8 border border-zinc-100 hover:shadow-lg hover:shadow-black/5 transition-all duration-300 flex flex-col"
               >
                 {/* Quote icon */}
@@ -857,10 +884,11 @@ export default function App() {
         <HeroHighlight containerClassName="!min-h-0 !h-auto py-24 md:py-32 !border-t-0">
           <div className="max-w-4xl mx-auto px-5 md:px-10 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={smoothViewport}
+              transition={smoothTransition}
             >
               <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-6 block">Fale Conosco</span>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
@@ -931,7 +959,7 @@ export default function App() {
               </div>
               <p className="text-sm leading-relaxed text-white/40 mb-6 max-w-xs">
                 Fabricando blocos, pavers e pisos de concreto com qualidade e
-                compromisso desde 2015.
+                compromisso desde 2020.
               </p>
               <div className="flex items-center gap-3">
                 <a href="#" aria-label="Instagram da D2 Blocos e Pisos" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-[#8CC63F]/20 hover:text-[#8CC63F] transition-all duration-200 cursor-pointer">
@@ -1053,7 +1081,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={smoothTransition}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4"
             onClick={() => setCityModalOpen(false)}
           >
