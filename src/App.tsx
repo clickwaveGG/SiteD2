@@ -152,7 +152,7 @@ const advantages = [
   {
     icon: Shield,
     title: 'Alta Resistência',
-    description: 'Produtos com até 50 MPa de resistência, garantindo durabilidade superior para qualquer tipo de tráfego.',
+    description: 'Produtos que atingem as normas de resistência, garantindo durabilidade superior para qualquer tipo de tráfego.',
   },
   {
     icon: Factory,
@@ -625,7 +625,7 @@ export default function App() {
           >
             <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Por que a D2?</span>
             <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight mb-6">
-              Qualidade que você vê <span className="text-[#8CC63F] font-serif italic">e sente</span>
+              Alta Resistência: <span className="text-[#8CC63F] font-serif italic">produtos que atingem as normas de resistência</span>
             </h2>
             <p className="text-zinc-500 text-lg leading-relaxed">
               Cada produto D2 é fabricado com rigoroso controle de qualidade,
@@ -732,13 +732,6 @@ export default function App() {
                         {product.category}
                       </span>
                     </div>
-                    {product.resistance && (
-                      <div className="absolute top-4 right-4">
-                        <span className="bg-[#8CC63F] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
-                          {product.resistance}
-                        </span>
-                      </div>
-                    )}
                   </div>
 
                   {/* Content */}
