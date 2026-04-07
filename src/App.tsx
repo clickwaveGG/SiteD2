@@ -56,7 +56,7 @@ const products = [
     id: 1,
     name: 'Bloco Estrutural',
     category: 'Blocos',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_160801_c4dd57b8-488d-4e34-8391-b129e4da81a9.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_160801_c4dd57b8-488d-4e34-8391-b129e4da81a9.jpeg',
     dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
     application: 'Alvenaria Estrutural',
     resistance: '6 MPa',
@@ -65,7 +65,7 @@ const products = [
     id: 2,
     name: 'Meio Bloco',
     category: 'Blocos',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_172327_987696a5-e3de-438d-b35d-ede364b62172.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_172327_987696a5-e3de-438d-b35d-ede364b62172.jpeg',
     dimensions: '09x19x19 · 14x19x19 · 19x19x19 cm',
     application: 'Ajuste e Acabamento',
     resistance: '6 MPa',
@@ -74,7 +74,7 @@ const products = [
     id: 3,
     name: 'Bloco Calha',
     category: 'Blocos',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_180519_ea7e9653-fa50-4535-adfa-5dff2702f734.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_180519_ea7e9653-fa50-4535-adfa-5dff2702f734.jpeg',
     dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
     application: 'Cintas e Vergas',
     resistance: '6 MPa',
@@ -82,39 +82,21 @@ const products = [
 
   /* ── PISOS INTERTRAVADOS ── */
   {
-    id: 4,
-    name: '16 Faces',
+    id: 5,
+    name: 'Bernine',
     category: 'Pisos Intertravados',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_181114_9ee3bc67-f5f8-4234-8937-5d3a48bf923a.jpeg&w=1920&q=85',
-    dimensions: '06x11,5x5 · 08x11,5x22 cm',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_182009_26cb6c2c-ff56-4438-9eda-e81158ff5cee.jpeg',
+    dimensions: '04x10x20 · 06x10x20 · 08x10x20 cm',
     application: 'Calçadas e Estacionamentos',
     resistance: '35 MPa',
   },
   {
-    id: 5,
-    name: 'Bernine',
+    id: 4,
+    name: '16 Faces',
     category: 'Pisos Intertravados',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_182009_26cb6c2c-ff56-4438-9eda-e81158ff5cee.jpeg&w=1920&q=85',
-    dimensions: '04x10x20 · 06x10x20 · 08x10x20 cm',
-    application: 'Áreas Residenciais e Comerciais',
-    resistance: '35 MPa',
-  },
-  {
-    id: 6,
-    name: 'Sextavado',
-    category: 'Pisos Intertravados',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_183359_a9990c1f-4a5a-4c15-9186-63c6b98b52b2.jpeg&w=1920&q=85',
-    dimensions: '06x11,5x22 · 08x30x30 cm',
-    application: 'Praças e Áreas Públicas',
-    resistance: '35 MPa',
-  },
-  {
-    id: 7,
-    name: 'Pisograma',
-    category: 'Pisos Intertravados',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184006_6f3e2745-9d1c-4162-80ee-e22d17852232.jpeg&w=1920&q=85',
-    dimensions: '08x16x32 cm',
-    application: 'Estacionamentos Permeáveis',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_181114_9ee3bc67-f5f8-4234-8937-5d3a48bf923a.jpeg',
+    dimensions: '06x11,5x5 · 08x11,5x22 cm',
+    application: 'Calçadas e Estacionamentos',
     resistance: '35 MPa',
   },
 
@@ -123,7 +105,7 @@ const products = [
     id: 8,
     name: 'Meio-Fio',
     category: 'Meio-Fio',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg',
     dimensions: '21x12x80 cm',
     application: 'Loteamentos e Vias Públicas',
     resistance: '35 MPa',
@@ -132,7 +114,7 @@ const products = [
     id: 9,
     name: 'Meio-Fio',
     category: 'Meio-Fio',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184849_ae96fd5f-95e7-4bcd-b7e7-659f6d0869ec.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg',
     dimensions: '15x35x80 cm',
     application: 'Loteamentos e Vias Públicas',
     resistance: '35 MPa',
@@ -141,7 +123,7 @@ const products = [
     id: 10,
     name: 'Meio-Fio',
     category: 'Meio-Fio',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260320_184913_675bb10a-9511-48bf-8e81-23eccb0be51a.jpeg&w=1920&q=85',
+    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg',
     dimensions: '10x25x80 · 10x30x80 cm',
     application: 'Loteamentos e Vias Públicas',
     resistance: '35 MPa',
@@ -561,101 +543,6 @@ export default function App() {
       </section>
 
       {/* ═══════════════════════════════════════
-          STATS SECTION
-          ═══════════════════════════════════════ */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#E8EDE1] via-[#F0F3EB] to-[#E2E8D8] overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#8CC63F]/8 rounded-[100%] blur-[120px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={smoothViewport}
-            transition={smoothTransition}
-            className="text-center mb-16 md:mb-24"
-          >
-            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Nossos Números</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">
-              Construindo resultados<br className="hidden md:block" /> sólidos todos os dias.
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {[
-              { ref: stat1.ref, count: stat1.count, suffix: '+', label: 'Cargas Enviadas', icon: Truck },
-              { ref: stat2.ref, count: stat2.count, suffix: 'k+', label: 'Blocos Vendidos', icon: Layers },
-              { ref: stat3.ref, count: stat3.count, suffix: '+', label: 'Obras Concluídas', icon: CheckCircle2 },
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={smoothViewport}
-                transition={{ ...smoothTransition, delay: i * 0.1 }}
-                ref={stat.ref}
-                className="flex flex-col items-center text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/80 shadow-sm"
-              >
-                <div className="w-14 h-14 bg-[#8CC63F]/10 rounded-xl flex items-center justify-center mb-5">
-                  <stat.icon size={28} className="text-[#8CC63F]" />
-                </div>
-                <span className="text-5xl md:text-7xl font-black text-[#8CC63F] tracking-tight mb-2">
-                  {stat.count}{stat.suffix}
-                </span>
-                <span className="text-zinc-500 font-semibold text-sm tracking-wider uppercase">{stat.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          VANTAGENS / SOBRE
-          ═══════════════════════════════════════ */}
-      <section id="vantagens" className="relative py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={smoothViewport}
-            transition={smoothTransition}
-            className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
-          >
-            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Por que a D2?</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight mb-6">
-              Alta Resistência: <span className="text-[#8CC63F] font-serif italic">produtos que atingem as normas de resistência</span>
-            </h2>
-            <p className="text-zinc-500 text-lg leading-relaxed">
-              Cada produto D2 é fabricado com rigoroso controle de qualidade,
-              matéria-prima selecionada e tecnologia de ponta.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {advantages.map((adv, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={smoothViewport}
-                transition={{ ...smoothTransition, delay: i * 0.08 }}
-                className="group bg-[#F7F7F5] rounded-2xl p-7 md:p-8 hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-zinc-200 cursor-default"
-              >
-                <div className="w-12 h-12 bg-[#8CC63F]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#8CC63F] transition-all duration-300">
-                  <adv.icon size={24} className="text-[#8CC63F] group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-lg font-bold text-zinc-900 mb-2">{adv.title}</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">{adv.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
           PRODUCT CATALOG
           ═══════════════════════════════════════ */}
       <section id="produtos" className="relative py-24 md:py-32 bg-[#F7F7F5]">
@@ -761,6 +648,101 @@ export default function App() {
               ))}
             </AnimatePresence>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          STATS SECTION
+          ═══════════════════════════════════════ */}
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#E8EDE1] via-[#F0F3EB] to-[#E2E8D8] overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#8CC63F]/8 rounded-[100%] blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
+            className="text-center mb-16 md:mb-24"
+          >
+            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Nossos Números</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight">
+              Construindo resultados<br className="hidden md:block" /> sólidos todos os dias.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              { ref: stat1.ref, count: stat1.count, suffix: '+', label: 'Cargas Enviadas', icon: Truck },
+              { ref: stat2.ref, count: stat2.count, suffix: 'k+', label: 'Blocos Vendidos', icon: Layers },
+              { ref: stat3.ref, count: stat3.count, suffix: '+', label: 'Obras Concluídas', icon: CheckCircle2 },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.1 }}
+                ref={stat.ref}
+                className="flex flex-col items-center text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/80 shadow-sm"
+              >
+                <div className="w-14 h-14 bg-[#8CC63F]/10 rounded-xl flex items-center justify-center mb-5">
+                  <stat.icon size={28} className="text-[#8CC63F]" />
+                </div>
+                <span className="text-5xl md:text-7xl font-black text-[#8CC63F] tracking-tight mb-2">
+                  {stat.count}{stat.suffix}
+                </span>
+                <span className="text-zinc-500 font-semibold text-sm tracking-wider uppercase">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          VANTAGENS / SOBRE
+          ═══════════════════════════════════════ */}
+      <section id="vantagens" className="relative py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
+            className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
+          >
+            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">Por que a D2?</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 tracking-tight mb-6">
+              Alta Resistência: <span className="text-[#8CC63F] font-serif italic">produtos que atingem as normas de resistência</span>
+            </h2>
+            <p className="text-zinc-500 text-lg leading-relaxed">
+              Cada produto D2 é fabricado com rigoroso controle de qualidade,
+              matéria-prima selecionada e tecnologia de ponta.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {advantages.map((adv, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={smoothViewport}
+                transition={{ ...smoothTransition, delay: i * 0.08 }}
+                className="group bg-[#F7F7F5] rounded-2xl p-7 md:p-8 hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300 border border-transparent hover:border-zinc-200 cursor-default"
+              >
+                <div className="w-12 h-12 bg-[#8CC63F]/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#8CC63F] transition-all duration-300">
+                  <adv.icon size={24} className="text-[#8CC63F] group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-zinc-900 mb-2">{adv.title}</h3>
+                <p className="text-zinc-500 text-sm leading-relaxed">{adv.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
