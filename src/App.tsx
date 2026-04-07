@@ -188,8 +188,8 @@ const testimonials = [
 ];
 
 const differentials = [
-  { number: '50+', label: 'Tipos de produtos', icon: Layers },
-  { number: '24h', label: 'Resposta de orçamento', icon: Clock },
+  { number: '+10', label: 'Tipos de produtos', icon: Layers },
+  { number: '4h', label: 'Resposta de orçamento', icon: Clock },
   { number: '100%', label: 'Normas ABNT', icon: CheckCircle2 },
   { number: '0%', label: 'Taxa de rejeição', icon: Shield },
 ];
