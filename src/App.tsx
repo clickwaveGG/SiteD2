@@ -294,6 +294,9 @@ export default function App() {
     const c = cities[city];
     setCityModalOpen(false);
     if (cityModalAction === 'whatsapp' || cityModalAction === 'general') {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact');
+      }
       window.open(
         `https://wa.me/${c.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento.')}`,
         '_blank'
