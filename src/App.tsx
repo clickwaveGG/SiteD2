@@ -334,8 +334,8 @@ export default function App() {
   }, [cityModalOpen]);
 
   // Counter hooks for stats
-  const stat1 = useCounter(150, 2000);
-  const stat2 = useCounter(800, 2500);
+  const stat1 = useCounter(200, 2000);
+  const stat2 = useCounter(150, 2500);
   const stat3 = useCounter(200, 2000);
 
   return (
@@ -677,9 +677,9 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {[
-              { ref: stat1.ref, count: stat1.count, suffix: '+', label: 'Cargas Enviadas', icon: Truck },
-              { ref: stat2.ref, count: stat2.count, suffix: 'k+', label: 'Blocos Vendidos', icon: Layers },
-              { ref: stat3.ref, count: stat3.count, suffix: '+', label: 'Obras Concluídas', icon: CheckCircle2 },
+              { ref: stat1.ref, value: `+${stat1.count}`, label: 'Cargas Enviadas', icon: Truck },
+              { ref: stat2.ref, value: `+${(stat2.count / 100).toFixed(1)}M`, label: 'Blocos Vendidos', icon: Layers },
+              { ref: stat3.ref, value: `+${stat3.count}`, label: 'Obras Concluídas', icon: CheckCircle2 },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -695,7 +695,7 @@ export default function App() {
                   <stat.icon size={28} className="text-[#8CC63F]" />
                 </div>
                 <span className="text-5xl md:text-7xl font-black text-[#8CC63F] tracking-tight mb-2">
-                  {stat.count}{stat.suffix}
+                  {stat.value}
                 </span>
                 <span className="text-zinc-500 font-semibold text-sm tracking-wider uppercase">{stat.label}</span>
               </motion.div>
