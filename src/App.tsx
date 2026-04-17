@@ -102,24 +102,6 @@ const products = [
 
   /* ── MEIO-FIO ── */
   {
-    id: 8,
-    name: 'Meio-Fio',
-    category: 'Meio-Fio',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184505_e33ab351-0147-4559-984f-fca1cb26835b.jpeg',
-    dimensions: '21x12x80 cm',
-    application: 'Loteamentos e Vias Públicas',
-    resistance: '35 MPa',
-  },
-  {
-    id: 9,
-    name: 'Meio-Fio',
-    category: 'Meio-Fio',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184849_ae96fd5f-95e7-4bcd-b7e7-659f6d0869ec.jpeg',
-    dimensions: '15x35x80 cm',
-    application: 'Loteamentos e Vias Públicas',
-    resistance: '35 MPa',
-  },
-  {
     id: 10,
     name: 'Meio-Fio',
     category: 'Meio-Fio',
@@ -213,10 +195,10 @@ const cities = {
   petrolina: {
     name: 'Petrolina',
     state: 'PE',
-    contact: 'Rafael Pedrosa',
-    whatsapp: '5587999784235',
-    phone: '+5587999784235',
-    phoneDisplay: '(87) 9.9978-4235',
+    contact: 'Leonardo Roberto',
+    whatsapp: '558781410015',
+    phone: '+558781410015',
+    phoneDisplay: '(87) 8141-0015',
     email: 'd2blocospremoldados@gmail.com',
     address: 'Av. Luís de Souza, 10, Quadra D, Distrito Industrial, Petrolina, PE — 56308-420',
     instagram: 'https://instagram.com/d2blocosepisosjn',
@@ -334,9 +316,9 @@ export default function App() {
   }, [cityModalOpen]);
 
   // Counter hooks for stats
-  const stat1 = useCounter(200, 2000);
+  const stat1 = useCounter(3000, 2000);
   const stat2 = useCounter(150, 2500);
-  const stat3 = useCounter(200, 2000);
+  const stat3 = useCounter(350, 2000);
 
   return (
     <div className="bg-[#F7F7F5] text-zinc-900 font-sans selection:bg-[#8CC63F]/30 overflow-x-hidden">
