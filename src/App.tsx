@@ -85,7 +85,7 @@ const products = [
     id: 5,
     name: 'Bernine',
     category: 'Pisos Intertravados',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_182009_26cb6c2c-ff56-4438-9eda-e81158ff5cee.jpeg',
+    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260422_183308_762acdc1-48dd-44e8-9a4f-cc4655410b5a.png&w=1280&q=85',
     dimensions: '04x10x20 · 06x10x20 · 08x10x20 cm',
     application: 'Calçadas e Estacionamentos',
     resistance: '35 MPa',
@@ -189,7 +189,7 @@ const cities = {
     phone: '+5588981509660',
     phoneDisplay: '(88) 9.8150-9660',
     email: 'd2blocospremoldados@gmail.com',
-    address: 'Av. José Cardoso de Alcântara, 856, Cidade Kariris, Barbalha, CE — 63180-000',
+    address: 'Av. José Cardoso Alcântara, Cidade Kariris, Juazeiro do Norte, CE — 63040-102',
     instagram: 'https://instagram.com/d2blocosepisosjn',
   },
   petrolina: {
