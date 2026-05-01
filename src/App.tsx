@@ -190,11 +190,13 @@ const cities = {
     phoneDisplay: '(88) 9.8150-9660',
     email: 'd2blocospremoldados@gmail.com',
     address: 'Av. José Cardoso Alcântara, Cidade Kariris, Juazeiro do Norte, CE — 63040-102',
+    mapsUrl: 'https://maps.app.goo.gl/BuRmuw2vY3EbxprKA',
     instagram: 'https://instagram.com/d2blocosepisosjn',
   },
   petrolina: {
     name: 'Petrolina',
     state: 'PE',
+    mapsUrl: '',
     contact: 'Leonardo Roberto',
     whatsapp: '558781410015',
     phone: '+558781410015',
@@ -924,7 +926,7 @@ export default function App() {
 
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                        href={c.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-2 bg-zinc-900 text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
