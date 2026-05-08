@@ -639,6 +639,119 @@ export default function App() {
       </section>
 
       {/* ═══════════════════════════════════════
+          UNIDADES / LOCALIZAÇÃO (Google Maps)
+          ═══════════════════════════════════════ */}
+      <section id="unidades" className="relative py-24 md:py-32 bg-[#F7F7F5]">
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={smoothViewport}
+            transition={smoothTransition}
+            className="text-center mb-16"
+          >
+            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">
+              Onde Estamos
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 tracking-tight mb-6">
+              Nossas <span className="text-[#8CC63F]">Unidades</span>
+            </h2>
+            <p className="text-zinc-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+              Duas fábricas estrategicamente posicionadas para atender sua obra com
+              rapidez e qualidade. Venha nos visitar.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
+            {(Object.keys(cities) as CityKey[]).map((key, idx) => {
+              const c = cities[key];
+              const mapQuery = encodeURIComponent(c.address);
+              return (
+                <motion.div
+                  key={key}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={smoothViewport}
+                  transition={{ ...smoothTransition, delay: idx * 0.1 }}
+                  className="group bg-white rounded-3xl overflow-hidden shadow-lg shadow-black/5 border border-zinc-100 hover:shadow-xl hover:shadow-black/10 transition-all duration-300"
+                >
+                  {/* Map */}
+                  <div className="relative h-64 md:h-72 w-full overflow-hidden bg-zinc-100">
+                    <iframe
+                      title={`Mapa D2 ${c.name}`}
+                      src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div className="p-7 md:p-8">
+                    <div className="flex items-start gap-4 mb-5">
+                      <div className="w-12 h-12 bg-[#8CC63F]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <MapPin size={22} className="text-[#8CC63F]" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-zinc-900 tracking-tight">
+                          D2 {c.name}
+                        </h3>
+                        <p className="text-zinc-400 text-sm font-medium uppercase tracking-wider mt-0.5">
+                          {c.state}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-start gap-3 text-zinc-600">
+                        <MapPin size={16} className="text-zinc-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-sm leading-relaxed">{c.address}</p>
+                      </div>
+                      <div className="flex items-center gap-3 text-zinc-600">
+                        <Phone size={16} className="text-zinc-400 flex-shrink-0" />
+                        <p className="text-sm">{c.phoneDisplay}</p>
+                      </div>
+                      <div className="flex items-center gap-3 text-zinc-600">
+                        <User size={16} className="text-zinc-400 flex-shrink-0" />
+                        <p className="text-sm">{c.contact}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={c.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 bg-zinc-900 text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
+                      >
+                        <MapPin size={16} />
+                        Como Chegar
+                      </a>
+                      <a
+                        href={`https://wa.me/${c.whatsapp}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 flex items-center justify-center gap-2 bg-[#8CC63F] text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-[#7AB033] transition-colors cursor-pointer"
+                      >
+                        <MessageCircle size={16} />
+                        WhatsApp
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
           STATS SECTION
           ═══════════════════════════════════════ */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#E8EDE1] via-[#F0F3EB] to-[#E2E8D8] overflow-hidden">
@@ -835,119 +948,6 @@ export default function App() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════
-          UNIDADES / LOCALIZAÇÃO (Google Maps)
-          ═══════════════════════════════════════ */}
-      <section id="unidades" className="relative py-24 md:py-32 bg-[#F7F7F5]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={smoothViewport}
-            transition={smoothTransition}
-            className="text-center mb-16"
-          >
-            <span className="text-[#8CC63F] font-bold text-sm tracking-widest uppercase mb-4 block">
-              Onde Estamos
-            </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 tracking-tight mb-6">
-              Nossas <span className="text-[#8CC63F]">Unidades</span>
-            </h2>
-            <p className="text-zinc-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Duas fábricas estrategicamente posicionadas para atender sua obra com
-              rapidez e qualidade. Venha nos visitar.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
-            {(Object.keys(cities) as CityKey[]).map((key, idx) => {
-              const c = cities[key];
-              const mapQuery = encodeURIComponent(c.address);
-              return (
-                <motion.div
-                  key={key}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={smoothViewport}
-                  transition={{ ...smoothTransition, delay: idx * 0.1 }}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-lg shadow-black/5 border border-zinc-100 hover:shadow-xl hover:shadow-black/10 transition-all duration-300"
-                >
-                  {/* Map */}
-                  <div className="relative h-64 md:h-72 w-full overflow-hidden bg-zinc-100">
-                    <iframe
-                      title={`Mapa D2 ${c.name}`}
-                      src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  </div>
-
-                  {/* Info */}
-                  <div className="p-7 md:p-8">
-                    <div className="flex items-start gap-4 mb-5">
-                      <div className="w-12 h-12 bg-[#8CC63F]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <MapPin size={22} className="text-[#8CC63F]" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-zinc-900 tracking-tight">
-                          D2 {c.name}
-                        </h3>
-                        <p className="text-zinc-400 text-sm font-medium uppercase tracking-wider mt-0.5">
-                          {c.state}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-start gap-3 text-zinc-600">
-                        <MapPin size={16} className="text-zinc-400 mt-0.5 flex-shrink-0" />
-                        <p className="text-sm leading-relaxed">{c.address}</p>
-                      </div>
-                      <div className="flex items-center gap-3 text-zinc-600">
-                        <Phone size={16} className="text-zinc-400 flex-shrink-0" />
-                        <p className="text-sm">{c.phoneDisplay}</p>
-                      </div>
-                      <div className="flex items-center gap-3 text-zinc-600">
-                        <User size={16} className="text-zinc-400 flex-shrink-0" />
-                        <p className="text-sm">{c.contact}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <a
-                        href={c.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-zinc-900 text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-zinc-800 transition-colors cursor-pointer"
-                      >
-                        <MapPin size={16} />
-                        Como Chegar
-                      </a>
-                      <a
-                        href={`https://wa.me/${c.whatsapp}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-[#8CC63F] text-white px-5 py-3 rounded-full font-semibold text-sm hover:bg-[#7AB033] transition-colors cursor-pointer"
-                      >
-                        <MessageCircle size={16} />
-                        WhatsApp
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
           </div>
         </div>
       </section>
