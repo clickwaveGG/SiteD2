@@ -262,14 +262,16 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [cityModalOpen, setCityModalOpen] = useState(false);
   const [cityModalAction, setCityModalAction] = useState<'whatsapp' | 'phone' | 'general'>('general');
+  const [cityModalProduct, setCityModalProduct] = useState<typeof products[number] | null>(null);
 
   const filteredProducts = activeCategory === 'Todos'
     ? products
     : products.filter(p => p.category === activeCategory);
 
   // Open city selector modal
-  const openCityModal = (action: 'whatsapp' | 'phone' | 'general' = 'general') => {
+  const openCityModal = (action: 'whatsapp' | 'phone' | 'general' = 'general', product?: typeof products[number]) => {
     setCityModalAction(action);
+    setCityModalProduct(product ?? null);
     setCityModalOpen(true);
   };
 
@@ -281,8 +283,11 @@ export default function App() {
       if (typeof window.fbq === 'function') {
         window.fbq('track', 'Contact');
       }
+      const message = cityModalProduct
+        ? `Olá! Tenho interesse no produto ${cityModalProduct.name} (${cityModalProduct.category}). Gostaria de solicitar um orçamento.`
+        : 'Olá! Gostaria de solicitar um orçamento.';
       window.open(
-        `https://wa.me/${c.whatsapp}?text=${encodeURIComponent('Olá! Gostaria de solicitar um orçamento.')}`,
+        `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(message)}`,
         '_blank'
       );
     } else if (cityModalAction === 'phone') {
@@ -624,7 +629,7 @@ export default function App() {
                     </div>
 
                     <button
-                      onClick={() => openCityModal('whatsapp')}
+                      onClick={() => openCityModal('whatsapp', product)}
                       className="w-full flex items-center justify-center gap-2 bg-[#2D3436] text-white py-3.5 rounded-xl font-semibold hover:bg-[#8CC63F] transition-colors duration-200 group/btn cursor-pointer"
                     >
                       Solicitar Orçamento
