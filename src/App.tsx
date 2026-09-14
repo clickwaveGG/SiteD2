@@ -56,7 +56,7 @@ const products = [
     id: 1,
     name: 'Bloco Estrutural',
     category: 'Blocos',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260510_054811_a07998a0-43bf-4173-a032-663547396fa8.png&w=1280&q=85',
+    image: '/produtos/bloco-estrutural.webp',
     dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
     application: 'Alvenaria Estrutural',
     resistance: '6 MPa',
@@ -65,7 +65,7 @@ const products = [
     id: 2,
     name: 'Meio Bloco',
     category: 'Blocos',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_172327_987696a5-e3de-438d-b35d-ede364b62172.jpeg',
+    image: '/produtos/meio-bloco.webp',
     dimensions: '09x19x19 · 14x19x19 · 19x19x19 cm',
     application: 'Ajuste e Acabamento',
     resistance: '6 MPa',
@@ -74,7 +74,7 @@ const products = [
     id: 3,
     name: 'Bloco Calha',
     category: 'Blocos',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_180519_ea7e9653-fa50-4535-adfa-5dff2702f734.jpeg',
+    image: '/produtos/bloco-calha.webp',
     dimensions: '09x19x39 · 14x19x39 · 11,5x19x39 · 19x19x39 cm',
     application: 'Cintas e Vergas',
     resistance: '6 MPa',
@@ -85,7 +85,7 @@ const products = [
     id: 5,
     name: 'Bernine',
     category: 'Pisos Intertravados',
-    image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39zyma8ql30s290hfBOQ8jKZC4x%2Fhf_20260510_054200_20c9798d-d70a-41f0-8b5c-462b6e29d2f4.png&w=1280&q=85',
+    image: '/produtos/bernine.webp',
     dimensions: '04x10x20 · 06x10x20 · 08x10x20 cm',
     application: 'Calçadas e Estacionamentos',
     resistance: '35 MPa',
@@ -94,7 +94,7 @@ const products = [
     id: 4,
     name: '16 Faces',
     category: 'Pisos Intertravados',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_181114_9ee3bc67-f5f8-4234-8937-5d3a48bf923a.jpeg',
+    image: '/produtos/16-faces.webp',
     dimensions: '06x11,5x22 · 08x11,5x22 cm',
     application: 'Calçadas e Estacionamentos',
     resistance: '35 MPa',
@@ -105,7 +105,7 @@ const products = [
     id: 10,
     name: 'Meio-Fio',
     category: 'Meio-Fio',
-    image: 'https://d8j0ntlcm91z4.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/hf_20260320_184913_675bb10a-9511-48bf-8e81-23eccb0be51a.jpeg',
+    image: '/produtos/meio-fio.webp',
     dimensions: '10x25x80 · 10x30x80 cm',
     application: 'Loteamentos e Vias Públicas',
     resistance: '35 MPa',
@@ -295,6 +295,18 @@ export default function App() {
     }
   };
 
+  // Qual vídeo do topo carregar. `md` do Tailwind começa em 768px.
+  const [heroVertical, setHeroVertical] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+  );
+
+  useEffect(() => {
+    const consulta = window.matchMedia('(max-width: 767px)');
+    const aoMudar = (e: MediaQueryListEvent) => setHeroVertical(e.matches);
+    consulta.addEventListener('change', aoMudar);
+    return () => consulta.removeEventListener('change', aoMudar);
+  }, []);
+
   // Scroll-aware navbar
   useEffect(() => {
     const handleScroll = () => {
@@ -430,23 +442,20 @@ export default function App() {
       <section className="relative min-h-screen overflow-hidden flex flex-col">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          {/* Mobile video (vertical) */}
+          {/*
+            Um vídeo só. Antes os dois ficavam no DOM e o navegador baixava
+            ambos — o escondido por CSS também. A capa aparece de imediato
+            enquanto o vídeo carrega atrás.
+          */}
           <video
+            key={heroVertical ? 'mobile' : 'desktop'}
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover block md:hidden"
-            src="https://d2ol7oe51mr4n9.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/606981e7-a7ae-4da7-8c05-98c17d69a53e.mp4"
-          />
-          {/* Desktop video (horizontal) */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover hidden md:block"
-            src="https://d2ol7oe51mr4n9.cloudfront.net/user_39zyma8ql30s290hfBOQ8jKZC4x/dd65ff75-978c-4a37-aa96-fbc7b8a700c1.mp4"
+            poster={heroVertical ? '/video/hero-mobile.webp' : '/video/hero-desktop.webp'}
+            className="w-full h-full object-cover"
+            src={heroVertical ? '/video/hero-mobile.mp4' : '/video/hero-desktop.mp4'}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
           <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#F7F7F5] to-transparent" />
